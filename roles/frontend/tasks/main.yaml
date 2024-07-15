@@ -1,28 +1,31 @@
     - name: install nginx server
       ansible.builtin.dnf:
-       name: nginx
-       state: installed
+        name: nginx
+        state: installed
     
     - name: start and enable nginx
       ansible.builtin.service:
-       name: nginx
-       state: started
-       enabled: yes
+        name: nginx
+        state: started
+        enabled: yes
    
     - name: run app pre-requisites
       ansible.builtin.import_role:
-       name: common
-       tasks_from: app-pre-req.yaml
+        name: common
+        tasks_from: app-pre-req.yaml
 
     - name: copy backend conf
       ansible.builtin.template:
         src: expense.conf.j2
         dest: /etc/nginx/default.d/expense.conf
       notify:
-      - restart nginx
+        - restart nginx
 
+    - name: debug output for verification
+      debug:
+        msg: "Running frontend tasks successfully"
 
-    # - name: restart nginx
-    #   ansible.builtin.service:
-    #     name: nginx
-    #    state: restarted
+  #  # - name: restart nginx
+  #     ansible.builtin.service:
+  #       name: nginx
+  #       state: restarted
