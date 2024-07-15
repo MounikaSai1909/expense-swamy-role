@@ -1,3 +1,4 @@
 BACKEND_API_URL: 172.31.17.69
-app_location: /usr/share/nginx/html
 component: frontend
+app_location: /usr/share/nginx/html
+
