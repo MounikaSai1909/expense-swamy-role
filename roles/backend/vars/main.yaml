@@ -4,3 +4,4 @@ login_password: ExpenseApp@1
 DB_HOST: 172.31.21.172
 app_location: /app
 component: backend
+app_installed: false
