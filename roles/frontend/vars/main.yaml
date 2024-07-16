@@ -1,5 +1,6 @@
 BACKEND_API_URL: 172.31.17.69
 component: frontend
 app_location: /usr/share/nginx/html
+app_installed: false
 
 
